@@ -70,3 +70,6 @@ Paste this entry:
 ```
 *	*	*	*	*	/path/to/monitor.sh
 ```
+
+## Contributors
+Simon Cornelius P. Umacob
