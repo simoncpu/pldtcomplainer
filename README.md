@@ -30,7 +30,7 @@ Then, go to the [Twitter Developer Page](https://developer.twitter.com/en/apps),
 
 ```
 $ twurl authorize --consumer-key <key> \
-                --consumer-secret <secret>
+                  --consumer-secret <secret>
 ```
 
 Once your down, the final step is to edit `monitor.sh` and edit the following lines:
