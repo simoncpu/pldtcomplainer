@@ -33,7 +33,7 @@ $ twurl authorize --consumer-key <key> \
                   --consumer-secret <secret>
 ```
 
-Once your down, the final step is to edit `monitor.sh` and edit the following lines:
+After you've finished installing the prerequisites, the final step is to edit `monitor.sh` and edit the following lines:
 
 ```
 #################### EDIT HERE ####################
