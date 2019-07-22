@@ -1,0 +1,9 @@
+#################### EDIT HERE ####################
+
+PLDT_ACCOUNT_NUMBER=1234567890
+EMAIL_ADDRESS=simoncpu@example.org
+COMPLAINT_MESSAGE="DSL is disconnected. LED status is RED."
+LOG_FILE=/var/log/pldtcomplaints.log
+
+#################### EDIT HERE ####################
+

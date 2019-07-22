@@ -33,14 +33,15 @@ $ twurl authorize --consumer-key <key> \
                   --consumer-secret <secret>
 ```
 
-After you've finished installing the prerequisites, the final step is to edit `monitor.sh` and edit the following lines:
+After you've finished installing the prerequisites, the final step is to copy `monitor.config.example` to `monitor.config` and edit the following lines:
 
 ```
 #################### EDIT HERE ####################
 
-PLDT_ACCOUNT_NUMBER=123456789
-LOG_FILE=/tmp/pldt_complaints.log
+PLDT_ACCOUNT_NUMBER=1234567890
+EMAIL_ADDRESS=simoncpu@example.org
 COMPLAINT_MESSAGE="DSL is disconnected. LED status is RED."
+LOG_FILE=/var/log/pldtcomplaints.log
 
 #################### EDIT HERE ####################
 ```
@@ -53,13 +54,13 @@ To execute once:
 $ ./monitor.sh
 ```
 
-To execute every minute:
+To execute every 30 seconds:
 
 ```
-$ while true; do ./monitor.sh; sleep 60; done
+$ while true; do ./monitor.sh; sleep 30; done
 ```
 
-To run as a crontab, open the crontab file:
+To execute every minute via crontab, open the crontab file:
 
 ```
 $ crontab -e
