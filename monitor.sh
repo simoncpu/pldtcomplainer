@@ -21,17 +21,20 @@ if [ $? -eq 0 ]; then
         twurl -A 'Content-type: application/json' -X POST /1.1/direct_messages/events/new.json -d "`cat /tmp/pldt_complaint_twitter`"
 
         rm /tmp/pldt_complaint_twitter
-        rm -f /tmp/pldt_complaint_lastip
+        rm /tmp/pldt_complaint_lastip
     fi
 
-    if [ -f '/tmp/pldt_complaint_zendesk' ]; then
-        echo 'PLDT complaint for Zendesk exists. Sending...';
-
-        curl https://pldt.zendesk.com/api/v2/requests.json  -X POST -H 'Content-Type: application/json' -d "`cat /tmp/pldt_complaint_zendesk`"
-
-        rm /tmp/pldt_complaint_zendesk
-        rm -f /tmp/pldt_complaint_lastip
-    fi
+#    They renamed or deleted their Zendesk account name
+#    after flooding their ticketing system through their API.
+#
+#    if [ -f '/tmp/pldt_complaint_zendesk' ]; then
+#        echo 'PLDT complaint for Zendesk exists. Sending...';
+#
+#        curl https://pldt.zendesk.com/api/v2/requests.json  -X POST -H 'Content-Type: application/json' -d "`cat /tmp/pldt_complaint_zendesk`"
+#
+#        rm /tmp/pldt_complaint_zendesk
+#        rm -f /tmp/pldt_complaint_lastip
+#    fi
 
     if [ ! -f '/tmp/pldt_complaint_lastip' ]; then
         curl -s https://ifconfig.co/ip | tr -d '\n' > /tmp/pldt_complaint_lastip
